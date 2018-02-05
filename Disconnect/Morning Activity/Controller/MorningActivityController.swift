@@ -6,8 +6,8 @@
 //  Copyright © 2018 Maarten Zonneveld. All rights reserved.
 //
 
-import Foundation
 import CoreMotion
+import Foundation
 
 internal protocol MorningActivityControllerDelegate: class {
 //    func 

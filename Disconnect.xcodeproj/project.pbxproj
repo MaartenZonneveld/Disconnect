@@ -158,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C582D0B202723D100AC2755 /* Build configuration list for PBXNativeTarget "Disconnect" */;
 			buildPhases = (
+				2C8414B02028D9C60094AA45 /* Swift Lint */,
 				2C582CF5202723D100AC2755 /* Sources */,
 				2C582CF6202723D100AC2755 /* Frameworks */,
 				2C582CF7202723D100AC2755 /* Resources */,
@@ -217,6 +218,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C8414B02028D9C60094AA45 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C582CF5202723D100AC2755 /* Sources */ = {

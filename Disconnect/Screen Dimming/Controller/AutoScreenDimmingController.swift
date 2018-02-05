@@ -26,8 +26,10 @@ internal final class AutoScreenDimmingController {
         }
     }
 
+    private var appWindowTappedObserver: Any?
+
     init() {
-        NotificationCenter.default.addObserver(forName: .AppWindowTapped, object: nil, queue: nil) { _ in
+        self.appWindowTappedObserver = NotificationCenter.default.addObserver(forName: .AppWindowTapped, object: nil, queue: nil) { _ in
             if self.isSleepAllowed {
                 self.temporaryWake()
             }
