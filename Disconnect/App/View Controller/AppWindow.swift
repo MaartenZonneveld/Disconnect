@@ -17,6 +17,14 @@ internal final class AppWindow: UIWindow {
 
     func setup() {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(windowTapped)))
+        self.rootViewController = RootViewController()
+    }
+
+    func rootViewController() -> RootViewController {
+        guard let root = self.rootViewController as? RootViewController else {
+            fatalError("rootViewController is not of type `RootViewController`")
+        }
+        return root
     }
 
     @objc

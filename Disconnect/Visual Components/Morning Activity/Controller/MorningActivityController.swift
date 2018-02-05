@@ -10,7 +10,8 @@ import CoreMotion
 import Foundation
 
 internal protocol MorningActivityControllerDelegate: class {
-//    func 
+    func userDidMove()
+    func userDidNotMove()
 }
 
 internal final class MorningActivityController {
@@ -18,11 +19,10 @@ internal final class MorningActivityController {
     private let motionActivityManager = CMMotionActivityManager()
     private weak var timer: Timer?
 
-    init() {
-        self.goodMorning()
-    }
+    private weak var delegate: MorningActivityControllerDelegate?
 
-    func goodMorning() {
+    func goodMorning(delegate: MorningActivityControllerDelegate) {
+        self.delegate = delegate
 
         print("Good Morning!")
         print("Get out of bed and start walking!")
@@ -39,14 +39,17 @@ internal final class MorningActivityController {
         print("User did walk!")
         print("Device is now free to use.")
         print("Have a good day!")
+
+        self.delegate?.userDidMove()
     }
     private func userDidNotMove() {
          print("C'mon get out!")
+        self.delegate?.userDidNotMove()
     }
 
     private func checkIfUserDidWalk() {
 
-        MotionActivityProvider().analyzeMovement(since: -10.0, till: 0.0, success: { didMove in
+        MotionActivityProvider().analyzeMovement(since: -8.0, minimalConfidence: .low, success: { didMove in
             if didMove {
                 self.userDidMove()
             } else {

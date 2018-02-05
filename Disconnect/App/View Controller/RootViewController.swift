@@ -10,23 +10,33 @@ import UIKit
 
 internal final class RootViewController: UIViewController {
 
-    private let morningActivityController = MorningActivityController()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UIApplication.shared.isIdleTimerDisabled = true
+        let activityViewController: EveningActivityViewController
+        do {
+            activityViewController = try EveningActivity.factory(for: EveningActivityViewController.self).initialViewController()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
 
-//        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: nil) { _ in
-//            self.autoDimmingController.isSleepAllowed = false
-//        }
-//
-//        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { _ in
-//            self.autoDimmingController.isSleepAllowed = true
-//        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.present(activityViewController, animated: true, completion: nil)
+        }
     }
 
-    override var prefersStatusBarHidden: Bool {
-        return true
+    func presentRoot(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        if let presentedViewController = self.presentedViewController {
+            presentedViewController.dismiss(animated: true, completion: {
+                self.present(viewControllerToPresent, animated: flag, completion: completion)
+            })
+            return
+        }
+
+        self.present(viewControllerToPresent, animated: flag, completion: completion)
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

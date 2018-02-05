@@ -15,14 +15,19 @@ internal final class EveningActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+internal extension EveningActivityViewController {
+    // MARK: UI Actions
 
     @IBAction private func startSleepButtonPressed(_ sender: Any) {
-        let nightActivityViewController: NightActivityViewController
+        let activityViewController: NightActivityViewController
         do {
-            nightActivityViewController = try NightActivity.factory(for: NightActivityViewController.self).initialViewController()
+            activityViewController = try NightActivity.factory(for: NightActivityViewController.self).initialViewController()
         } catch {
             fatalError(error.localizedDescription)
         }
-        self.show(nightActivityViewController, sender: nil)
+
+        AppDelegate.shared.appWindow.rootViewController().presentRoot(activityViewController, animated: true, completion: nil)
     }
 }

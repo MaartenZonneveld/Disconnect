@@ -22,13 +22,12 @@ internal final class MotionActivityProvider {
         }
     }
 
-    func analyzeMovement(since: TimeInterval, till: TimeInterval, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
+    func analyzeMovement(since: TimeInterval, minimalConfidence: CMMotionActivityConfidence, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
 
         let now = Date()
         let sinceDate = now.addingTimeInterval(since)
-        let tillDate = now.addingTimeInterval(till)
 
-        CMMotionActivityManager().queryActivityStarting(from: sinceDate, to: tillDate, to: .main) { activities, error in
+        CMMotionActivityManager().queryActivityStarting(from: sinceDate, to: now, to: .main) { activities, error in
 
             if let error = error {
                 failure(MotionActivityProviderError(description: error.localizedDescription))
@@ -37,22 +36,24 @@ internal final class MotionActivityProvider {
 
             // Filter away all activities with low confidence
             let activities = activities?.filter({ activity -> Bool in
-                activity.confidence != .low
+                switch minimalConfidence {
+                case .high:
+                    return activity.confidence == .high
+                case .medium:
+                    return activity.confidence == .medium || activity.confidence == .high
+                case .low:
+                    return true
+                }
             }) ?? []
 
             if activities.isEmpty {
-                success(true)
+                failure(MotionActivityProviderError(description: "No activities"))
                 return
             }
 
             var didMove = false
 
             for activity in activities {
-
-//                if !activity.stationary {
-//                    didMove = true
-//                    break
-//                }
 
                 let activitiesOtherThanStationary =
                     activity.automotive ||

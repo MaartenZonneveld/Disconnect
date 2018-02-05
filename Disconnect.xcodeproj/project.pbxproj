@@ -18,7 +18,6 @@
 		2C582D132027342E00AC2755 /* MorningActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C582D122027342E00AC2755 /* MorningActivityController.swift */; };
 		2C8414B72028DEC70094AA45 /* EveningActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8414B62028DEC70094AA45 /* EveningActivity.storyboard */; };
 		2C8414B92028DEEC0094AA45 /* EveningActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414B82028DEEC0094AA45 /* EveningActivityViewController.swift */; };
-		2C8414BB2028DFD80094AA45 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414BA2028DFD80094AA45 /* AppPresenter.swift */; };
 		2C8414BD2028E0DD0094AA45 /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414BC2028E0DD0094AA45 /* VisualComponent.swift */; };
 		2C8414BF2028E0FE0094AA45 /* EveningActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414BE2028E0FE0094AA45 /* EveningActivity.swift */; };
 		2C8414C22028E24C0094AA45 /* NightActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414C12028E24C0094AA45 /* NightActivity.swift */; };
@@ -26,6 +25,7 @@
 		2C8414C92028E2970094AA45 /* NightActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414C82028E2970094AA45 /* NightActivityViewController.swift */; };
 		2C8414CD2028E2FC0094AA45 /* MorningActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414CC2028E2FC0094AA45 /* MorningActivityViewController.swift */; };
 		2C8414CF2028E30C0094AA45 /* MorningActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8414CE2028E30C0094AA45 /* MorningActivity.storyboard */; };
+		2C8414D12028E8880094AA45 /* MorningActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414D02028E8880094AA45 /* MorningActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,6 @@
 		2C582D122027342E00AC2755 /* MorningActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningActivityController.swift; sourceTree = "<group>"; };
 		2C8414B62028DEC70094AA45 /* EveningActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EveningActivity.storyboard; sourceTree = "<group>"; };
 		2C8414B82028DEEC0094AA45 /* EveningActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveningActivityViewController.swift; sourceTree = "<group>"; };
-		2C8414BA2028DFD80094AA45 /* AppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
 		2C8414BC2028E0DD0094AA45 /* VisualComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualComponent.swift; sourceTree = "<group>"; };
 		2C8414BE2028E0FE0094AA45 /* EveningActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveningActivity.swift; sourceTree = "<group>"; };
 		2C8414C12028E24C0094AA45 /* NightActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightActivity.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		2C8414C82028E2970094AA45 /* NightActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightActivityViewController.swift; sourceTree = "<group>"; };
 		2C8414CC2028E2FC0094AA45 /* MorningActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningActivityViewController.swift; sourceTree = "<group>"; };
 		2C8414CE2028E30C0094AA45 /* MorningActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MorningActivity.storyboard; sourceTree = "<group>"; };
+		2C8414D02028E8880094AA45 /* MorningActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				2C582CFC202723D100AC2755 /* AppDelegate.swift */,
-				2C8414BA2028DFD80094AA45 /* AppPresenter.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 		2C216CCF2028D8D200D9C0A9 /* Morning Activity */ = {
 			isa = PBXGroup;
 			children = (
+				2C8414D02028E8880094AA45 /* MorningActivity.swift */,
 				2C8414CB2028E2EF0094AA45 /* View Controller */,
 				2C8414CA2028E2EA0094AA45 /* View */,
 				2C216CD02028D8E800D9C0A9 /* Controller */,
@@ -351,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C8414BD2028E0DD0094AA45 /* VisualComponent.swift in Sources */,
+				2C8414D12028E8880094AA45 /* MorningActivity.swift in Sources */,
 				2C582D1120272B6B00AC2755 /* AutoScreenDimmingController.swift in Sources */,
 				2C216CC32028D31B00D9C0A9 /* AppWindow.swift in Sources */,
 				2C8414BF2028E0FE0094AA45 /* EveningActivity.swift in Sources */,
@@ -361,7 +362,6 @@
 				2C8414C92028E2970094AA45 /* NightActivityViewController.swift in Sources */,
 				2C8414CD2028E2FC0094AA45 /* MorningActivityViewController.swift in Sources */,
 				2C8414C22028E24C0094AA45 /* NightActivity.swift in Sources */,
-				2C8414BB2028DFD80094AA45 /* AppPresenter.swift in Sources */,
 				2C582CFD202723D100AC2755 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

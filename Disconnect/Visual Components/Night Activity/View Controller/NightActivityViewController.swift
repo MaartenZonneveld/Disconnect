@@ -19,11 +19,13 @@ internal final class NightActivityViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        UIApplication.shared.isIdleTimerDisabled = true
         AppDelegate.shared.autoScreenDimmingController.isSleepAllowed = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        UIApplication.shared.isIdleTimerDisabled = false
         AppDelegate.shared.autoScreenDimmingController.isSleepAllowed = false
     }
 
@@ -36,6 +38,12 @@ internal extension NightActivityViewController {
     // MARK: UI Actions
 
     @IBAction private func finishSleepButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let activityViewController: MorningActivityViewController
+        do {
+            activityViewController = try MorningActivity.factory(for: MorningActivityViewController.self).initialViewController()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        AppDelegate.shared.appWindow.rootViewController().presentRoot(activityViewController, animated: true, completion: nil)
     }
 }
