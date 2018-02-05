@@ -10,13 +10,10 @@ import UIKit
 
 internal final class RootViewController: UIViewController {
 
-//    private let autoDimmingController = AutoDimmingController()
     private let morningActivityController = MorningActivityController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.autoDimmingController.isSleepAllowed = true
 
         UIApplication.shared.isIdleTimerDisabled = true
 
@@ -33,4 +30,3 @@ internal final class RootViewController: UIViewController {
         return true
     }
 }
-
