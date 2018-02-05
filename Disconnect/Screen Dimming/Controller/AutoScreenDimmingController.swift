@@ -1,5 +1,5 @@
 //
-//  AutoDimmingController.swift
+//  AutoScreenDimmingControlle.swift
 //  Disconnect
 //
 //  Created by Maarten Zonneveld on 04/02/2018.
@@ -9,9 +9,9 @@
 import Foundation
 import UIKit.UIScreen
 
-internal final class AutoDimmingController {
+internal final class AutoScreenDimmingController {
 
-    private let dimDelay = 5.0
+    private let sleepDelay = 5.0
 
     private var restorationBrightness = UIScreen.main.brightness
     private weak var sleepTimer: Timer?
@@ -22,6 +22,14 @@ internal final class AutoDimmingController {
                 self.temporaryWake()
             } else {
                 self.wake()
+            }
+        }
+    }
+
+    init() {
+        NotificationCenter.default.addObserver(forName: .AppWindowTapped, object: nil, queue: nil) { _ in
+            if self.isSleepAllowed {
+                self.temporaryWake()
             }
         }
     }
@@ -39,7 +47,7 @@ internal final class AutoDimmingController {
     private func temporaryWake() {
         self.wake()
 
-        self.sleepTimer = Timer.scheduledTimer(withTimeInterval: self.dimDelay, repeats: false, block: { _ in
+        self.sleepTimer = Timer.scheduledTimer(withTimeInterval: self.sleepDelay, repeats: false, block: { _ in
             self.sleep()
         })
         self.sleepTimer?.tolerance = 2.5
@@ -49,9 +57,5 @@ internal final class AutoDimmingController {
         self.restorationBrightness = UIScreen.main.brightness
         UIScreen.main.wantsSoftwareDimming = true
         UIScreen.main.brightness = 0.0
-    }
-
-    func screenTapped() {
-        self.temporaryWake()
     }
 }
