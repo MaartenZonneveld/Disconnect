@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="crk-cE-9uL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Night Activity View Controller-->
+        <scene sceneID="irL-uS-JMf">
+            <objects>
+                <viewController id="crk-cE-9uL" customClass="NightActivityViewController" customModule="Disconnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WqQ-7B-idg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7B7-Bw-taS">
+                                <rect key="frame" x="134.5" y="327" width="106" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="I'm awake 👋">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishSleepButtonPressed:" destination="crk-cE-9uL" eventType="touchUpInside" id="sHk-db-YD6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7B7-Bw-taS" firstAttribute="centerX" secondItem="znI-97-nZP" secondAttribute="centerX" id="7xB-Xh-1YA"/>
+                            <constraint firstItem="7B7-Bw-taS" firstAttribute="centerY" secondItem="znI-97-nZP" secondAttribute="centerY" id="Smx-bb-4td"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="znI-97-nZP"/>
+                    </view>
+                    <connections>
+                        <outlet property="finishSleepButton" destination="7B7-Bw-taS" id="jSI-qS-Krl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BB5-TX-mcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="-88"/>
+        </scene>
+    </scenes>
+</document>

@@ -17,8 +17,6 @@ internal final class AppWindow: UIWindow {
 
     func setup() {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(windowTapped)))
-
-        self.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
     }
 
     @objc

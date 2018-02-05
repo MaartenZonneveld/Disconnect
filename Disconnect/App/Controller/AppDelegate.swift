@@ -18,17 +18,12 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
         return shared
     }
 
-    var window: AppWindow!
-
+    let appPresenter = AppPresenter()
     let autoScreenDimmingController = AutoScreenDimmingController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let window = AppWindow(frame: UIScreen.main.bounds)
-        window.windowLevel = UIWindowLevelNormal
-        window.setup()
-        window.makeKeyAndVisible()
-        self.window = window
+        self.appPresenter.setup()
 
         return true
     }

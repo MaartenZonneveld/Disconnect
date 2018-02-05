@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C216CC32028D31B00D9C0A9 /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C216CC22028D31B00D9C0A9 /* AppWindow.swift */; };
-		2C216CC92028D65D00D9C0A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C216CC82028D65D00D9C0A9 /* Main.storyboard */; };
 		2C216CD22028D94400D9C0A9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2C216CD12028D94400D9C0A9 /* .swiftlint.yml */; };
 		2C582CFD202723D100AC2755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C582CFC202723D100AC2755 /* AppDelegate.swift */; };
 		2C582CFF202723D100AC2755 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C582CFE202723D100AC2755 /* RootViewController.swift */; };
@@ -17,12 +16,21 @@
 		2C582D0F2027250400AC2755 /* MotionActivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C582D0E2027250400AC2755 /* MotionActivityProvider.swift */; };
 		2C582D1120272B6B00AC2755 /* AutoScreenDimmingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C582D1020272B6B00AC2755 /* AutoScreenDimmingController.swift */; };
 		2C582D132027342E00AC2755 /* MorningActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C582D122027342E00AC2755 /* MorningActivityController.swift */; };
+		2C8414B72028DEC70094AA45 /* EveningActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8414B62028DEC70094AA45 /* EveningActivity.storyboard */; };
+		2C8414B92028DEEC0094AA45 /* EveningActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414B82028DEEC0094AA45 /* EveningActivityViewController.swift */; };
+		2C8414BB2028DFD80094AA45 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414BA2028DFD80094AA45 /* AppPresenter.swift */; };
+		2C8414BD2028E0DD0094AA45 /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414BC2028E0DD0094AA45 /* VisualComponent.swift */; };
+		2C8414BF2028E0FE0094AA45 /* EveningActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414BE2028E0FE0094AA45 /* EveningActivity.swift */; };
+		2C8414C22028E24C0094AA45 /* NightActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414C12028E24C0094AA45 /* NightActivity.swift */; };
+		2C8414C72028E27F0094AA45 /* NightActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8414C62028E27F0094AA45 /* NightActivity.storyboard */; };
+		2C8414C92028E2970094AA45 /* NightActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414C82028E2970094AA45 /* NightActivityViewController.swift */; };
+		2C8414CD2028E2FC0094AA45 /* MorningActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414CC2028E2FC0094AA45 /* MorningActivityViewController.swift */; };
+		2C8414CF2028E30C0094AA45 /* MorningActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8414CE2028E30C0094AA45 /* MorningActivity.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C216CC22028D31B00D9C0A9 /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		2C216CC62028D64700D9C0A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2C216CC82028D65D00D9C0A9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2C216CD12028D94400D9C0A9 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2C582CF9202723D100AC2755 /* Disconnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disconnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C582CFC202723D100AC2755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +40,16 @@
 		2C582D0E2027250400AC2755 /* MotionActivityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionActivityProvider.swift; sourceTree = "<group>"; };
 		2C582D1020272B6B00AC2755 /* AutoScreenDimmingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScreenDimmingController.swift; sourceTree = "<group>"; };
 		2C582D122027342E00AC2755 /* MorningActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningActivityController.swift; sourceTree = "<group>"; };
+		2C8414B62028DEC70094AA45 /* EveningActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EveningActivity.storyboard; sourceTree = "<group>"; };
+		2C8414B82028DEEC0094AA45 /* EveningActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveningActivityViewController.swift; sourceTree = "<group>"; };
+		2C8414BA2028DFD80094AA45 /* AppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
+		2C8414BC2028E0DD0094AA45 /* VisualComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualComponent.swift; sourceTree = "<group>"; };
+		2C8414BE2028E0FE0094AA45 /* EveningActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveningActivity.swift; sourceTree = "<group>"; };
+		2C8414C12028E24C0094AA45 /* NightActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightActivity.swift; sourceTree = "<group>"; };
+		2C8414C62028E27F0094AA45 /* NightActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NightActivity.storyboard; sourceTree = "<group>"; };
+		2C8414C82028E2970094AA45 /* NightActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightActivityViewController.swift; sourceTree = "<group>"; };
+		2C8414CC2028E2FC0094AA45 /* MorningActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningActivityViewController.swift; sourceTree = "<group>"; };
+		2C8414CE2028E30C0094AA45 /* MorningActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MorningActivity.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +76,6 @@
 		2C216CC52028D62E00D9C0A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2C216CC22028D31B00D9C0A9 /* AppWindow.swift */,
-				2C216CC82028D65D00D9C0A9 /* Main.storyboard */,
 				2C582D05202723D100AC2755 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -69,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				2C582CFC202723D100AC2755 /* AppDelegate.swift */,
+				2C8414BA2028DFD80094AA45 /* AppPresenter.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -76,7 +93,9 @@
 		2C216CCB2028D6D000D9C0A9 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2C8414BC2028E0DD0094AA45 /* VisualComponent.swift */,
 				2C582CFE202723D100AC2755 /* RootViewController.swift */,
+				2C216CC22028D31B00D9C0A9 /* AppWindow.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -108,6 +127,8 @@
 		2C216CCF2028D8D200D9C0A9 /* Morning Activity */ = {
 			isa = PBXGroup;
 			children = (
+				2C8414CB2028E2EF0094AA45 /* View Controller */,
+				2C8414CA2028E2EA0094AA45 /* View */,
 				2C216CD02028D8E800D9C0A9 /* Controller */,
 			);
 			path = "Morning Activity";
@@ -143,12 +164,98 @@
 			isa = PBXGroup;
 			children = (
 				2C216CC42028D62700D9C0A9 /* App */,
-				2C216CCF2028D8D200D9C0A9 /* Morning Activity */,
-				2C216CCD2028D75A00D9C0A9 /* Screen Dimming */,
+				2C8414B22028DE810094AA45 /* Controller Components */,
+				2C8414B12028DE780094AA45 /* Visual Components */,
 				2C216CCC2028D6E000D9C0A9 /* Resources */,
 				2C582D08202723D100AC2755 /* Info.plist */,
 			);
 			path = Disconnect;
+			sourceTree = "<group>";
+		};
+		2C8414B12028DE780094AA45 /* Visual Components */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414B32028DEA40094AA45 /* Evening Activity */,
+				2C8414C02028E2370094AA45 /* Night Activity */,
+				2C216CCF2028D8D200D9C0A9 /* Morning Activity */,
+			);
+			path = "Visual Components";
+			sourceTree = "<group>";
+		};
+		2C8414B22028DE810094AA45 /* Controller Components */ = {
+			isa = PBXGroup;
+			children = (
+				2C216CCD2028D75A00D9C0A9 /* Screen Dimming */,
+			);
+			path = "Controller Components";
+			sourceTree = "<group>";
+		};
+		2C8414B32028DEA40094AA45 /* Evening Activity */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414BE2028E0FE0094AA45 /* EveningActivity.swift */,
+				2C8414B52028DEB50094AA45 /* View Controller */,
+				2C8414B42028DEB00094AA45 /* View */,
+			);
+			path = "Evening Activity";
+			sourceTree = "<group>";
+		};
+		2C8414B42028DEB00094AA45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414B62028DEC70094AA45 /* EveningActivity.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C8414B52028DEB50094AA45 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414B82028DEEC0094AA45 /* EveningActivityViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2C8414C02028E2370094AA45 /* Night Activity */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414C12028E24C0094AA45 /* NightActivity.swift */,
+				2C8414C42028E2690094AA45 /* View Controller */,
+				2C8414C32028E2650094AA45 /* View */,
+			);
+			path = "Night Activity";
+			sourceTree = "<group>";
+		};
+		2C8414C32028E2650094AA45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414C62028E27F0094AA45 /* NightActivity.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C8414C42028E2690094AA45 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414C82028E2970094AA45 /* NightActivityViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2C8414CA2028E2EA0094AA45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414CE2028E30C0094AA45 /* MorningActivity.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C8414CB2028E2EF0094AA45 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414CC2028E2FC0094AA45 /* MorningActivityViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +318,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C216CD22028D94400D9C0A9 /* .swiftlint.yml in Resources */,
-				2C216CC92028D65D00D9C0A9 /* Main.storyboard in Resources */,
 				2C582D07202723D100AC2755 /* LaunchScreen.storyboard in Resources */,
+				2C8414C72028E27F0094AA45 /* NightActivity.storyboard in Resources */,
+				2C8414B72028DEC70094AA45 /* EveningActivity.storyboard in Resources */,
+				2C8414CF2028E30C0094AA45 /* MorningActivity.storyboard in Resources */,
 				2C582D04202723D100AC2755 /* AppIcon.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,11 +350,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8414BD2028E0DD0094AA45 /* VisualComponent.swift in Sources */,
 				2C582D1120272B6B00AC2755 /* AutoScreenDimmingController.swift in Sources */,
 				2C216CC32028D31B00D9C0A9 /* AppWindow.swift in Sources */,
+				2C8414BF2028E0FE0094AA45 /* EveningActivity.swift in Sources */,
 				2C582D132027342E00AC2755 /* MorningActivityController.swift in Sources */,
+				2C8414B92028DEEC0094AA45 /* EveningActivityViewController.swift in Sources */,
 				2C582D0F2027250400AC2755 /* MotionActivityProvider.swift in Sources */,
 				2C582CFF202723D100AC2755 /* RootViewController.swift in Sources */,
+				2C8414C92028E2970094AA45 /* NightActivityViewController.swift in Sources */,
+				2C8414CD2028E2FC0094AA45 /* MorningActivityViewController.swift in Sources */,
+				2C8414C22028E24C0094AA45 /* NightActivity.swift in Sources */,
+				2C8414BB2028DFD80094AA45 /* AppPresenter.swift in Sources */,
 				2C582CFD202723D100AC2755 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
