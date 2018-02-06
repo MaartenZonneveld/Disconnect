@@ -18,6 +18,8 @@ internal final class AutoScreenDimmingController {
 
     var isSleepAllowed = false {
         didSet {
+            UIDevice.current.isProximityMonitoringEnabled = self.isSleepAllowed
+
             if self.isSleepAllowed {
                 self.temporaryWake()
             } else {
@@ -55,6 +57,8 @@ internal final class AutoScreenDimmingController {
             UIScreen.main.brightness = self.restorationBrightness
         }
         UIScreen.main.wantsSoftwareDimming = false
+
+        UIDevice.current.playInputClick()
     }
 
     private func temporaryWake() {

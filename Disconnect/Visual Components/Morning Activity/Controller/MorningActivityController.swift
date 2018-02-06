@@ -24,10 +24,7 @@ internal final class MorningActivityController {
     func goodMorning(delegate: MorningActivityControllerDelegate) {
         self.delegate = delegate
 
-        print("Good Morning!")
-        print("Get out of bed and start walking!")
-
-        self.timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: { _ in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true, block: { _ in
             self.checkIfUserDidWalk()
         })
         self.timer?.tolerance = 0.5
@@ -35,22 +32,16 @@ internal final class MorningActivityController {
 
     private func userDidMove() {
         self.timer?.invalidate()
-
-        print("User did walk!")
-        print("Device is now free to use.")
-        print("Have a good day!")
-
         self.delegate?.userDidMove()
     }
     private func userDidNotMove() {
-         print("C'mon get out!")
         self.delegate?.userDidNotMove()
     }
 
     private func checkIfUserDidWalk() {
 
-        MotionActivityProvider().analyzeMovement(since: -8.0, minimalConfidence: .low, success: { didMove in
-            if didMove {
+        MotionActivityProvider().scanForWalkActivity(since: -4.0, minimalConfidence: .medium, success: { isWalking in
+            if isWalking {
                 self.userDidMove()
             } else {
                 self.userDidNotMove()

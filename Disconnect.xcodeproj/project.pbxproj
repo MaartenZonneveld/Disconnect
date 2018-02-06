@@ -26,6 +26,7 @@
 		2C8414CD2028E2FC0094AA45 /* MorningActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414CC2028E2FC0094AA45 /* MorningActivityViewController.swift */; };
 		2C8414CF2028E30C0094AA45 /* MorningActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8414CE2028E30C0094AA45 /* MorningActivity.storyboard */; };
 		2C8414D12028E8880094AA45 /* MorningActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414D02028E8880094AA45 /* MorningActivity.swift */; };
+		2C8414D92029E1DE0094AA45 /* AppLockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8414D82029E1DE0094AA45 /* AppLockController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		2C8414CC2028E2FC0094AA45 /* MorningActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningActivityViewController.swift; sourceTree = "<group>"; };
 		2C8414CE2028E30C0094AA45 /* MorningActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MorningActivity.storyboard; sourceTree = "<group>"; };
 		2C8414D02028E8880094AA45 /* MorningActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningActivity.swift; sourceTree = "<group>"; };
+		2C8414D82029E1DE0094AA45 /* AppLockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		2C8414B22028DE810094AA45 /* Controller Components */ = {
 			isa = PBXGroup;
 			children = (
+				2C8414D72029E1C90094AA45 /* App Lock */,
 				2C216CCD2028D75A00D9C0A9 /* Screen Dimming */,
 			);
 			path = "Controller Components";
@@ -256,6 +259,22 @@
 				2C8414CC2028E2FC0094AA45 /* MorningActivityViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2C8414D72029E1C90094AA45 /* App Lock */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414DA2029E1E10094AA45 /* Controller */,
+			);
+			path = "App Lock";
+			sourceTree = "<group>";
+		};
+		2C8414DA2029E1E10094AA45 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C8414D82029E1DE0094AA45 /* AppLockController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +381,7 @@
 				2C8414C92028E2970094AA45 /* NightActivityViewController.swift in Sources */,
 				2C8414CD2028E2FC0094AA45 /* MorningActivityViewController.swift in Sources */,
 				2C8414C22028E24C0094AA45 /* NightActivity.swift in Sources */,
+				2C8414D92029E1DE0094AA45 /* AppLockController.swift in Sources */,
 				2C582CFD202723D100AC2755 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,13 @@ import UIKit
 
 internal final class MorningActivityViewController: UIViewController {
 
+    @IBOutlet private weak var statusLabel: UILabel!
+
     private let morningActivityController = MorningActivityController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userDidNotMove()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -26,9 +29,13 @@ internal final class MorningActivityViewController: UIViewController {
 extension MorningActivityViewController: MorningActivityControllerDelegate {
 
     func userDidNotMove() {
+        self.statusLabel.text = "C'mon, get out!"
     }
 
     func userDidMove() {
-        self.dismiss(animated: true, completion: nil)
+        self.statusLabel.text = "Have a nice day 😎"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            AppDelegate.shared.appWindow.rootViewController().resetRoot(animated: true)
+        }
     }
 }

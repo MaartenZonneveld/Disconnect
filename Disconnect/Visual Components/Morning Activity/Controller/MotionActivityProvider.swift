@@ -22,7 +22,7 @@ internal final class MotionActivityProvider {
         }
     }
 
-    func analyzeMovement(since: TimeInterval, minimalConfidence: CMMotionActivityConfidence, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
+    func scanForWalkActivity(since: TimeInterval, minimalConfidence: CMMotionActivityConfidence, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
 
         let now = Date()
         let sinceDate = now.addingTimeInterval(since)
@@ -51,24 +51,25 @@ internal final class MotionActivityProvider {
                 return
             }
 
-            var didMove = false
+            var isWalking = false
 
             for activity in activities {
 
-                let activitiesOtherThanStationary =
-                    activity.automotive ||
-                    activity.running ||
-                    activity.walking ||
-                    activity.cycling ||
-                    activity.unknown
+                print(activity)
 
-                if activitiesOtherThanStationary {
-                    didMove = true
+                if
+//                    activity.automotive ||
+                    activity.running ||
+                    activity.walking // ||
+//                    activity.cycling ||
+//                    activity.unknown 
+                {
+                    isWalking = true
                     break
                 }
             }
 
-            success(didMove)
+            success(isWalking)
         }
     }
 }

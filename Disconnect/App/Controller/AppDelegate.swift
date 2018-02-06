@@ -21,6 +21,7 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
     private(set) var appWindow: AppWindow!
 
     let autoScreenDimmingController = AutoScreenDimmingController()
+    let appLockController = AppLockController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 

@@ -17,13 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="Fl0-p9-UDt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63D-Xz-1cS">
+                                <rect key="frame" x="187.5" y="343.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="63D-Xz-1cS" firstAttribute="centerY" secondItem="dD2-nU-yN8" secondAttribute="centerY" id="C2z-p1-V7z"/>
+                            <constraint firstItem="63D-Xz-1cS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dD2-nU-yN8" secondAttribute="leading" constant="32" id="DNT-fb-QIe"/>
+                            <constraint firstItem="63D-Xz-1cS" firstAttribute="centerX" secondItem="dD2-nU-yN8" secondAttribute="centerX" id="Ema-SF-QqI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dD2-nU-yN8"/>
                     </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="63D-Xz-1cS" id="c8y-IR-5iZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZP-vR-1ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="21"/>
+            <point key="canvasLocation" x="-714" y="142"/>
         </scene>
     </scenes>
 </document>
