@@ -12,6 +12,7 @@ import UIKit.UIApplication
 internal extension Notification.Name {
 
     static let UserLeftLockedAppNotification = Notification.Name(rawValue: "UserLeftLockedAppNotification")
+    static let UserReturnedToAppNotification = Notification.Name(rawValue: "UserReturnedToAppNotification")
 }
 
 internal final class AppLockController {
@@ -19,7 +20,7 @@ internal final class AppLockController {
     var isAppLocked = false {
         didSet {
             UIApplication.shared.isIdleTimerDisabled = self.isAppLocked
-            self.notifiyUserIfNeeded()
+            self.notifiyUserIfNeeded(wasAppActive: self.isAppActive)
 
             self.removeObservers()
 
@@ -31,7 +32,7 @@ internal final class AppLockController {
 
     private(set) var isAppActive = true {
         didSet {
-            self.notifiyUserIfNeeded()
+            self.notifiyUserIfNeeded(wasAppActive: oldValue)
         }
     }
 
@@ -57,8 +58,16 @@ internal final class AppLockController {
         }
     }
 
-    private func notifiyUserIfNeeded() {
-        if !self.isAppActive && self.isAppLocked {
+    private func notifiyUserIfNeeded(wasAppActive: Bool) {
+        if !self.isAppLocked {
+            return
+        }
+
+        if self.isAppActive {
+            if !wasAppActive {
+                NotificationCenter.default.post(name: .UserReturnedToAppNotification, object: nil)
+            }
+        } else {
             NotificationCenter.default.post(name: .UserLeftLockedAppNotification, object: nil)
         }
     }

@@ -16,9 +16,13 @@ internal final class LocalNotificationController: NSObject {
 
     static let shared = LocalNotificationController()
 
+    var notificationCenter: UNUserNotificationCenter {
+        return UNUserNotificationCenter.current()
+    }
+
     private override init() {
         super.init()
-        UNUserNotificationCenter.current().delegate = self
+        self.notificationCenter.delegate = self
 
         self.UIApplicationDidBecomeActiveObserver = NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: nil) { _ in
             UIApplication.shared.applicationIconBadgeNumber = 0
@@ -26,7 +30,7 @@ internal final class LocalNotificationController: NSObject {
     }
 
     func requestAuthorization(completion: ((_ granted: Bool) -> Void)? = nil) {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        self.notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
                 print(error.localizedDescription)
             }
@@ -66,12 +70,20 @@ internal final class LocalNotificationController: NSObject {
     func sendLocalNotification(identifier: String, content: UNNotificationContent, trigger: UNNotificationTrigger? = nil, completion: ((Error?) -> Swift.Void)? = nil) {
         DispatchQueue.main.async {
 
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
-            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [identifier])
+            self.notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+            self.notificationCenter.removeDeliveredNotifications(withIdentifiers: [identifier])
 
             let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: completion)
+            self.notificationCenter.add(request, withCompletionHandler: completion)
         }
+    }
+}
+
+extension LocalNotificationController {
+    // MARK: Common triggers
+
+    static func timeIntervalTrigger(_ timeInterval: TimeInterval, repeats: Bool = false) -> UNNotificationTrigger {
+        return UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: repeats)
     }
 }
 
