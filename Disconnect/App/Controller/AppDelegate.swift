@@ -6,6 +6,8 @@
 //  Copyright © 2018 Maarten Zonneveld. All rights reserved.
 //
 
+import Crashlytics
+import Fabric
 import UIKit.UIApplication
 
 @UIApplicationMain
@@ -24,6 +26,8 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
     let appLockController = AppLockController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        Fabric.with([Crashlytics.self])
 
         let window = AppWindow(frame: UIScreen.main.bounds)
         window.windowLevel = UIWindowLevelNormal
