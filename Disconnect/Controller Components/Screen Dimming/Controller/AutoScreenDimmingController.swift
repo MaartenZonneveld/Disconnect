@@ -20,7 +20,10 @@ internal final class AutoScreenDimmingController {
         didSet {
             UIDevice.current.isProximityMonitoringEnabled = self.isSleepAllowed
 
+            self.removeSleepObservers()
+
             if self.isSleepAllowed {
+                self.addSleepObservers()
                 self.temporaryWake()
             } else {
                 self.wake()
@@ -32,20 +35,28 @@ internal final class AutoScreenDimmingController {
     private var UIApplicationDidBecomeActiveObserver: Any?
     private var UIApplicationWillResignActiveObserver: Any?
 
-    init() {
-        self.appWindowTappedObserver = NotificationCenter.default.addObserver(forName: .AppWindowTapped, object: nil, queue: nil) { _ in
-            if self.isSleepAllowed {
-                self.temporaryWake()
-            }
-        }
+    private func addSleepObservers() {
 
+        self.appWindowTappedObserver = NotificationCenter.default.addObserver(forName: .AppWindowTapped, object: nil, queue: nil) { _ in
+            self.temporaryWake()
+        }
         self.UIApplicationDidBecomeActiveObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { _ in
-            if self.isSleepAllowed {
-                self.temporaryWake()
-            }
+            self.temporaryWake()
         }
         self.UIApplicationWillResignActiveObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: nil) { _ in
             self.wake()
+        }
+    }
+
+    private func removeSleepObservers() {
+        if let observer = self.appWindowTappedObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+        if let observer = self.UIApplicationDidBecomeActiveObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+        if let observer = self.UIApplicationWillResignActiveObserver {
+            NotificationCenter.default.removeObserver(observer)
         }
     }
 
@@ -57,8 +68,6 @@ internal final class AutoScreenDimmingController {
             UIScreen.main.brightness = self.restorationBrightness
         }
         UIScreen.main.wantsSoftwareDimming = false
-
-        UIDevice.current.playInputClick()
     }
 
     private func temporaryWake() {
