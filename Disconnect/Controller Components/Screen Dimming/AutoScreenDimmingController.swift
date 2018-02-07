@@ -20,10 +20,10 @@ internal final class AutoScreenDimmingController {
         didSet {
             UIDevice.current.isProximityMonitoringEnabled = self.isSleepAllowed
 
-            self.removeSleepObservers()
+            self.removeObservers()
 
             if self.isSleepAllowed {
-                self.addSleepObservers()
+                self.addObservers()
                 self.temporaryWake()
             } else {
                 self.wake()
@@ -35,7 +35,7 @@ internal final class AutoScreenDimmingController {
     private var UIApplicationDidBecomeActiveObserver: Any?
     private var UIApplicationWillResignActiveObserver: Any?
 
-    private func addSleepObservers() {
+    private func addObservers() {
 
         self.appWindowTappedObserver = NotificationCenter.default.addObserver(forName: .AppWindowTapped, object: nil, queue: nil) { _ in
             self.temporaryWake()
@@ -48,7 +48,7 @@ internal final class AutoScreenDimmingController {
         }
     }
 
-    private func removeSleepObservers() {
+    private func removeObservers() {
         if let observer = self.appWindowTappedObserver {
             NotificationCenter.default.removeObserver(observer)
         }

@@ -20,6 +20,12 @@ internal final class AppLockController {
         didSet {
             UIApplication.shared.isIdleTimerDisabled = self.isAppLocked
             self.notifiyUserIfNeeded()
+
+            self.removeObservers()
+
+            if self.isAppLocked {
+                self.addObservers()
+            }
         }
     }
 
@@ -32,7 +38,7 @@ internal final class AppLockController {
     private var UIApplicationDidBecomeActiveObserver: Any?
     private var UIApplicationWillResignActiveObserver: Any?
 
-    init() {
+    private func addObservers() {
 
         self.UIApplicationDidBecomeActiveObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { _ in
             self.isAppActive = true
@@ -41,7 +47,8 @@ internal final class AppLockController {
             self.isAppActive = false
         }
     }
-    func destruct() {
+
+    private func removeObservers() {
         if let observer = self.UIApplicationDidBecomeActiveObserver {
             NotificationCenter.default.removeObserver(observer)
         }

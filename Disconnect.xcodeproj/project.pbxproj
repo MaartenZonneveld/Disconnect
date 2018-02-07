@@ -30,6 +30,7 @@
 		2C883C29202B815A00077ACE /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C28202B815A00077ACE /* AppColors.swift */; };
 		2C883C2B202B82EC00077ACE /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C2A202B82EC00077ACE /* AppFonts.swift */; };
 		2C883C2D202B83F700077ACE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C2C202B83F700077ACE /* GradientView.swift */; };
+		2C883C30202BA79F00077ACE /* LocalNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C2F202BA79F00077ACE /* LocalNotificationController.swift */; };
 		F223B07EC764C3A60EFAD79A /* Pods_Disconnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		2C883C28202B815A00077ACE /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		2C883C2A202B82EC00077ACE /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		2C883C2C202B83F700077ACE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2C883C2F202BA79F00077ACE /* LocalNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationController.swift; sourceTree = "<group>"; };
 		40565C03A1D73D8EA29B6607 /* Pods-Disconnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.release.xcconfig"; sourceTree = "<group>"; };
 		D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disconnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A4F4F0F6057453CA0D254 /* Pods-Disconnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,17 +128,9 @@
 		2C216CCD2028D75A00D9C0A9 /* Screen Dimming */ = {
 			isa = PBXGroup;
 			children = (
-				2C216CCE2028D76F00D9C0A9 /* Controller */,
-			);
-			path = "Screen Dimming";
-			sourceTree = "<group>";
-		};
-		2C216CCE2028D76F00D9C0A9 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				2C582D1020272B6B00AC2755 /* AutoScreenDimmingController.swift */,
 			);
-			path = Controller;
+			path = "Screen Dimming";
 			sourceTree = "<group>";
 		};
 		2C216CCF2028D8D200D9C0A9 /* Morning Activity */ = {
@@ -203,6 +197,7 @@
 		2C8414B22028DE810094AA45 /* Controller Components */ = {
 			isa = PBXGroup;
 			children = (
+				2C883C2E202BA78400077ACE /* Local Notifications */,
 				2C8414D72029E1C90094AA45 /* App Lock */,
 				2C216CCD2028D75A00D9C0A9 /* Screen Dimming */,
 			);
@@ -280,17 +275,17 @@
 		2C8414D72029E1C90094AA45 /* App Lock */ = {
 			isa = PBXGroup;
 			children = (
-				2C8414DA2029E1E10094AA45 /* Controller */,
+				2C8414D82029E1DE0094AA45 /* AppLockController.swift */,
 			);
 			path = "App Lock";
 			sourceTree = "<group>";
 		};
-		2C8414DA2029E1E10094AA45 /* Controller */ = {
+		2C883C2E202BA78400077ACE /* Local Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				2C8414D82029E1DE0094AA45 /* AppLockController.swift */,
+				2C883C2F202BA79F00077ACE /* LocalNotificationController.swift */,
 			);
-			path = Controller;
+			path = "Local Notifications";
 			sourceTree = "<group>";
 		};
 		7F93425A4C8AAAFA5E43A7D9 /* Pods */ = {
@@ -499,6 +494,7 @@
 				2C8414CD2028E2FC0094AA45 /* MorningActivityViewController.swift in Sources */,
 				2C8414C22028E24C0094AA45 /* NightActivity.swift in Sources */,
 				2C8414D92029E1DE0094AA45 /* AppLockController.swift in Sources */,
+				2C883C30202BA79F00077ACE /* LocalNotificationController.swift in Sources */,
 				2C582CFD202723D100AC2755 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
