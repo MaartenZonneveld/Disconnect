@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Jv-xn-6Cw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Jv-xn-6Cw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14081.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,16 +24,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWH-Ld-RMk">
+                                <rect key="frame" x="150" y="608" width="74" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="I'm in a hurry"/>
+                                <connections>
+                                    <action selector="hurryButtonPressed:" destination="6Jv-xn-6Cw" eventType="touchUpInside" id="Eqz-YZ-599"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="63D-Xz-1cS" firstAttribute="centerY" secondItem="dD2-nU-yN8" secondAttribute="centerY" id="C2z-p1-V7z"/>
                             <constraint firstItem="63D-Xz-1cS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dD2-nU-yN8" secondAttribute="leading" constant="32" id="DNT-fb-QIe"/>
                             <constraint firstItem="63D-Xz-1cS" firstAttribute="centerX" secondItem="dD2-nU-yN8" secondAttribute="centerX" id="Ema-SF-QqI"/>
+                            <constraint firstItem="dD2-nU-yN8" firstAttribute="bottom" secondItem="dWH-Ld-RMk" secondAttribute="bottom" constant="32" id="eeB-Yr-5kS"/>
+                            <constraint firstItem="dWH-Ld-RMk" firstAttribute="centerX" secondItem="dD2-nU-yN8" secondAttribute="centerX" id="wx3-b6-pVo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dD2-nU-yN8"/>
                     </view>
                     <connections>
+                        <outlet property="hurryButton" destination="dWH-Ld-RMk" id="icb-OE-33o"/>
                         <outlet property="statusLabel" destination="63D-Xz-1cS" id="c8y-IR-5iZ"/>
                     </connections>
                 </viewController>

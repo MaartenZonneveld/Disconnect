@@ -11,6 +11,7 @@ import UIKit
 internal final class MorningActivityViewController: UIViewController {
 
     @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet weak var hurryButton: UIButton!
 
     private let morningActivityController = MorningActivityController()
 
@@ -24,6 +25,19 @@ internal final class MorningActivityViewController: UIViewController {
 
         self.morningActivityController.goodMorning(delegate: self)
     }
+
+    @IBAction func hurryButtonPressed(_ sender: Any) {
+
+        let alertController = UIAlertController(title: "In a hurry?", message: "Stopping right now will ruin your statistics! Walking around will just take a few seconds.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "I NEED to go NOW 🏃‍♀️", style: .destructive, handler: { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+
+        let preferredAction = UIAlertAction(title: "I will walk first", style: .default, handler: nil)
+        alertController.addAction(preferredAction)
+        alertController.preferredAction = preferredAction
+        self.showDetailViewController(alertController, sender: nil)
+    }
 }
 
 extension MorningActivityViewController: MorningActivityControllerDelegate {
@@ -34,8 +48,8 @@ extension MorningActivityViewController: MorningActivityControllerDelegate {
 
     func userDidMove() {
         self.statusLabel.text = "Have a nice day 😎"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            AppDelegate.shared.appWindow.rootViewController().resetRoot(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0517B320386A1E009BB615 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C0517B220386A1E009BB615 /* Root.storyboard */; };
 		2C216CC32028D31B00D9C0A9 /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C216CC22028D31B00D9C0A9 /* AppWindow.swift */; };
 		2C216CD22028D94400D9C0A9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2C216CD12028D94400D9C0A9 /* .swiftlint.yml */; };
 		2C582CFD202723D100AC2755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C582CFC202723D100AC2755 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0517B220386A1E009BB615 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		2C216CC22028D31B00D9C0A9 /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		2C216CC62028D64700D9C0A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C216CD12028D94400D9C0A9 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -80,6 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0517AF203869F9009BB615 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				2C0517B120386A05009BB615 /* View Controller */,
+				2C0517B020386A00009BB615 /* View */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		2C0517B020386A00009BB615 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C0517B220386A1E009BB615 /* Root.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C0517B120386A05009BB615 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C582CFE202723D100AC2755 /* RootViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		2C216CC42028D62700D9C0A9 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				2C8414BC2028E0DD0094AA45 /* VisualComponent.swift */,
-				2C582CFE202723D100AC2755 /* RootViewController.swift */,
 				2C216CC22028D31B00D9C0A9 /* AppWindow.swift */,
 			);
 			path = "View Controller";
@@ -189,6 +215,7 @@
 		2C8414B12028DE780094AA45 /* Visual Components */ = {
 			isa = PBXGroup;
 			children = (
+				2C0517AF203869F9009BB615 /* Root */,
 				2C8414B32028DEA40094AA45 /* Evening Activity */,
 				2C8414C02028E2370094AA45 /* Night Activity */,
 				2C216CCF2028D8D200D9C0A9 /* Morning Activity */,
@@ -341,7 +368,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Maarten Zonneveld";
 				TargetAttributes = {
 					2C582CF8202723D100AC2755 = {
@@ -376,6 +403,7 @@
 				2C582D07202723D100AC2755 /* LaunchScreen.storyboard in Resources */,
 				2C8414C72028E27F0094AA45 /* NightActivity.storyboard in Resources */,
 				2C8414B72028DEC70094AA45 /* EveningActivity.storyboard in Resources */,
+				2C0517B320386A1E009BB615 /* Root.storyboard in Resources */,
 				2C8414CF2028E30C0094AA45 /* MorningActivity.storyboard in Resources */,
 				2C582D04202723D100AC2755 /* AppIcon.xcassets in Resources */,
 			);
@@ -531,6 +559,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -538,6 +567,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -587,6 +617,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -594,6 +625,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -617,6 +649,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -47,13 +47,14 @@ internal extension EveningActivityViewController {
 
     @IBAction private func startSleepButtonPressed(_ sender: Any) {
         let activityViewController: NightActivityViewController
+
         do {
             activityViewController = try NightActivity.factory(for: NightActivityViewController.self).initialViewController()
         } catch {
             fatalError(error.localizedDescription)
         }
 
-        AppDelegate.shared.appWindow.rootViewController().presentRoot(activityViewController, animated: true, completion: nil)
+        self.show(activityViewController, sender: nil)
     }
 
     @IBAction func settingsButtonPressed(_ sender: Any) {

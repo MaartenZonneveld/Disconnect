@@ -49,11 +49,12 @@ internal extension NightActivityViewController {
 
     @IBAction private func finishSleepButtonPressed(_ sender: Any) {
         let activityViewController: MorningActivityViewController
+
         do {
             activityViewController = try MorningActivity.factory(for: MorningActivityViewController.self).initialViewController()
         } catch {
             fatalError(error.localizedDescription)
         }
-        AppDelegate.shared.appWindow.rootViewController().presentRoot(activityViewController, animated: true, completion: nil)
+        self.show(activityViewController, sender: nil)
     }
 }

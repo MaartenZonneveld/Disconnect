@@ -17,11 +17,11 @@ internal final class AppWindow: UIWindow {
 
     func setup() {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(windowTapped)))
-        self.rootViewController = RootViewController()
+        self.rootViewController = UIStoryboard(name: "Root", bundle: nil).instantiateInitialViewController()
     }
 
     func rootViewController() -> RootViewController {
-        guard let root = self.rootViewController as? RootViewController else {
+        guard let root = self.rootViewController?.navigationController?.viewControllers.first as? RootViewController else {
             fatalError("rootViewController is not of type `RootViewController`")
         }
         return root
