@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C0517B320386A1E009BB615 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C0517B220386A1E009BB615 /* Root.storyboard */; };
+		2C0517B620387518009BB615 /* OnboardingBulletins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0517B520387518009BB615 /* OnboardingBulletins.swift */; };
 		2C216CC32028D31B00D9C0A9 /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C216CC22028D31B00D9C0A9 /* AppWindow.swift */; };
 		2C216CD22028D94400D9C0A9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2C216CD12028D94400D9C0A9 /* .swiftlint.yml */; };
 		2C582CFD202723D100AC2755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C582CFC202723D100AC2755 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		2C0517B220386A1E009BB615 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		2C0517B520387518009BB615 /* OnboardingBulletins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBulletins.swift; sourceTree = "<group>"; };
 		2C216CC22028D31B00D9C0A9 /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		2C216CC62028D64700D9C0A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C216CD12028D94400D9C0A9 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 				2C582CFE202723D100AC2755 /* RootViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2C0517B420387504009BB615 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2C0517B520387518009BB615 /* OnboardingBulletins.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		2C216CC42028D62700D9C0A9 /* App */ = {
@@ -215,6 +225,7 @@
 		2C8414B12028DE780094AA45 /* Visual Components */ = {
 			isa = PBXGroup;
 			children = (
+				2C0517B420387504009BB615 /* Onboarding */,
 				2C0517AF203869F9009BB615 /* Root */,
 				2C8414B32028DEA40094AA45 /* Evening Activity */,
 				2C8414C02028E2370094AA45 /* Night Activity */,
@@ -342,8 +353,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C582D0B202723D100AC2755 /* Build configuration list for PBXNativeTarget "Disconnect" */;
 			buildPhases = (
-				2C883C27202B751300077ACE /* Build number from Git */,
 				697EEF3489E6665EE1751F03 /* [CP] Check Pods Manifest.lock */,
+				2C883C27202B751300077ACE /* Build number from Git */,
 				2C8414B02028D9C60094AA45 /* Swift Lint */,
 				2C582CF5202723D100AC2755 /* Sources */,
 				2C582CF6202723D100AC2755 /* Frameworks */,
@@ -493,9 +504,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BulletinBoard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BulletinBoard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -518,6 +532,7 @@
 				2C216CC32028D31B00D9C0A9 /* AppWindow.swift in Sources */,
 				2C8414BF2028E0FE0094AA45 /* EveningActivity.swift in Sources */,
 				2C582D132027342E00AC2755 /* MorningActivityController.swift in Sources */,
+				2C0517B620387518009BB615 /* OnboardingBulletins.swift in Sources */,
 				2C8414B92028DEEC0094AA45 /* EveningActivityViewController.swift in Sources */,
 				2C582D0F2027250400AC2755 /* MotionActivityProvider.swift in Sources */,
 				2C582CFF202723D100AC2755 /* RootViewController.swift in Sources */,
@@ -649,7 +664,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};

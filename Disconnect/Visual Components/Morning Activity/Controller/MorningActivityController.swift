@@ -24,8 +24,8 @@ internal final class MorningActivityController {
     func goodMorning(delegate: MorningActivityControllerDelegate) {
         self.delegate = delegate
 
-        self.timer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true, block: { _ in
-            self.checkIfUserDidWalk()
+        self.timer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true, block: { [weak self] _ in
+            self?.checkIfUserDidWalk()
         })
         self.timer?.tolerance = 0.5
     }

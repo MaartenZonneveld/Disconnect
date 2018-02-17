@@ -105,7 +105,7 @@ whitelist_rules:
 - legacy_constant                         
 - legacy_constructor                      
 - legacy_nsgeometry_functions             
-- let_var_whitespace                      
+# - let_var_whitespace                      
 - line_length                             
 # - literal_expression_end_indentation      
 - mark                                    

@@ -1,16 +1,19 @@
 PODS:
+  - BulletinBoard (1.3.0)
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
 
 DEPENDENCIES:
+  - BulletinBoard
   - Crashlytics
   - Fabric
 
 SPEC CHECKSUMS:
+  BulletinBoard: 23c9d98cac654fd484d76f2a0655669974e9bd9c
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
 
-PODFILE CHECKSUM: 86225e34e75a6a35cd6c237b814efc1f6be57127
+PODFILE CHECKSUM: bd392c2a25472dca54b2129fe81d8a315d314de7
 
 COCOAPODS: 1.3.1
