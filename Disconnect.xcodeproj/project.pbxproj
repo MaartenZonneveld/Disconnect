@@ -342,8 +342,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C582D0B202723D100AC2755 /* Build configuration list for PBXNativeTarget "Disconnect" */;
 			buildPhases = (
-				2C883C27202B751300077ACE /* Build number from Git */,
 				697EEF3489E6665EE1751F03 /* [CP] Check Pods Manifest.lock */,
+				2C883C27202B751300077ACE /* Build number from Git */,
 				2C8414B02028D9C60094AA45 /* Swift Lint */,
 				2C582CF5202723D100AC2755 /* Sources */,
 				2C582CF6202723D100AC2755 /* Frameworks */,
