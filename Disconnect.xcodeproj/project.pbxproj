@@ -41,7 +41,7 @@
 		2C216CC22028D31B00D9C0A9 /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		2C216CC62028D64700D9C0A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C216CD12028D94400D9C0A9 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		2C582CF9202723D100AC2755 /* Disconnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disconnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C582CF9202723D100AC2755 /* Sleepy Head.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sleepy Head.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C582CFC202723D100AC2755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C582CFE202723D100AC2755 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2C582D03202723D100AC2755 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		2C582CFA202723D100AC2755 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C582CF9202723D100AC2755 /* Disconnect.app */,
+				2C582CF9202723D100AC2755 /* Sleepy Head.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -358,7 +358,7 @@
 			);
 			name = Disconnect;
 			productName = Disconnect;
-			productReference = 2C582CF9202723D100AC2755 /* Disconnect.app */;
+			productReference = 2C582CF9202723D100AC2755 /* Sleepy Head.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -665,7 +665,7 @@
 				INFOPLIST_FILE = Disconnect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "work.maarten.sleepy-head";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Sleepy Head";
 				PROVISIONING_PROFILE_SPECIFIER = "Sleepy Head Development";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,7 +682,7 @@
 				INFOPLIST_FILE = Disconnect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "work.maarten.sleepy-head";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Sleepy Head";
 				PROVISIONING_PROFILE_SPECIFIER = "Sleepy Head Distribution";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
