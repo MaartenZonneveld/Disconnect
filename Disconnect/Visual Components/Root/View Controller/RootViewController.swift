@@ -35,7 +35,6 @@ extension RootViewController {
 
     private var isOnboardingCompleted: Bool {
         get {
-            return false
             return UserDefaults.standard.bool(forKey: "RootViewController.isOnboardingCompleted")
         }
         set {
