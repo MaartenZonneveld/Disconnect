@@ -6,12 +6,12 @@
 //  Copyright © 2018 Maarten Zonneveld. All rights reserved.
 //
 
-import BulletinBoard
+import BLTNBoard
 import UIKit
 
 internal final class RootViewController: UITabBarController {
 
-    private var bulletinManager: BulletinManager?
+    private var bulletinItemManager: BLTNItemManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ internal final class RootViewController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        //self.showOnboardingIfNeeded()
+        self.showOnboardingIfNeeded()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -35,6 +35,7 @@ extension RootViewController {
 
     private var isOnboardingCompleted: Bool {
         get {
+            return false
             return UserDefaults.standard.bool(forKey: "RootViewController.isOnboardingCompleted")
         }
         set {
@@ -48,39 +49,50 @@ extension RootViewController {
             return
         }
 
-        let notifications = OnboardingBulletins.notifications
-        notifications.actionHandler = { item in
+        let notifications = OnboardingBulletins.notifications(action: { item in
             LocalNotificationController.shared.requestAuthorization(completion: { _ in
-                item.displayNextItem()
+                DispatchQueue.main.async {
+                    item.manager?.displayNextItem()
+                }
             })
+        })
+
+        let motion = OnboardingBulletins.motion { item in
+
+            MotionActivityProvider.requestPermission {
+                DispatchQueue.main.async {
+                    item.manager?.displayNextItem()
+                }
+            }
         }
 
-        let items = [
-            OnboardingBulletins.notifications,
-            OnboardingBulletins.motion,
-            OnboardingBulletins.completed
-        ]
+        let completed = OnboardingBulletins.completed { item in
+            item.manager?.dismissBulletin()
+        }
 
-        self.showBulletins(items)
+        self.showBulletins([
+            notifications,
+            motion,
+            completed
+            ])
         self.isOnboardingCompleted = true
     }
 
-    func showBulletins(_ items: [BulletinItem]) {
+    func showBulletins(_ items: [BLTNItem]) {
 
         var i = 0
         items.forEach { item in
             i += 1
-            item.nextItem = items.indices.contains(i) ? items[i] : nil
+            item.next = items.indices.contains(i) ? items[i] : nil
         }
 
         guard let root = items.first else {
             return
         }
 
-        self.bulletinManager = BulletinManager(rootItem: root)
-        self.bulletinManager?.backgroundViewStyle = .blurredDark
+        self.bulletinItemManager = BLTNItemManager(rootItem: root)
+        self.bulletinItemManager?.backgroundViewStyle = .blurredDark
 
-        self.bulletinManager?.prepare()
-        self.bulletinManager?.presentBulletin(above: self)
+        self.bulletinItemManager?.showBulletin(above: self)
     }
 }
