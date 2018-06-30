@@ -9,6 +9,11 @@
 import Foundation
 import UIKit.UIScreen
 
+extension Notification.Name {
+
+    static let AutoScreenDimmingControllerAppWentToSleep = Notification.Name(rawValue: "AutoScreenDimmingControllerAppWentToSleep")
+}
+
 internal final class AutoScreenDimmingController {
 
     private let sleepDelay = 5.0
@@ -83,5 +88,7 @@ internal final class AutoScreenDimmingController {
         self.restorationBrightness = UIScreen.main.brightness
         UIScreen.main.wantsSoftwareDimming = true
         UIScreen.main.brightness = 0.0
+
+        NotificationCenter.default.post(name: .AutoScreenDimmingControllerAppWentToSleep, object: nil)
     }
 }
