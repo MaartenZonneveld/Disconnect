@@ -35,6 +35,7 @@
 		2C883C30202BA79F00077ACE /* LocalNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C2F202BA79F00077ACE /* LocalNotificationController.swift */; };
 		2C883C32202BB2DA00077ACE /* UserLeftLockedAppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C31202BB2DA00077ACE /* UserLeftLockedAppSession.swift */; };
 		F223B07EC764C3A60EFAD79A /* Pods_Disconnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */; };
+		FE1780AB20E7AFDA00DDACF2 /* Onboarding.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1780AA20E7AFDA00DDACF2 /* Onboarding.xcassets */; };
 		FE6B6EF52051D37500E93F2B /* Tips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF42051D37500E93F2B /* Tips.storyboard */; };
 		FE6B6EF72051D38700E93F2B /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6B6EF62051D38700E93F2B /* TipsViewController.swift */; };
 		FE6B6EF92051D77B00E93F2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF82051D77B00E93F2B /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		40565C03A1D73D8EA29B6607 /* Pods-Disconnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.release.xcconfig"; sourceTree = "<group>"; };
 		D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disconnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A4F4F0F6057453CA0D254 /* Pods-Disconnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.debug.xcconfig"; sourceTree = "<group>"; };
+		FE1780AA20E7AFDA00DDACF2 /* Onboarding.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Onboarding.xcassets; sourceTree = "<group>"; };
 		FE6B6EF42051D37500E93F2B /* Tips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tips.storyboard; sourceTree = "<group>"; };
 		FE6B6EF62051D38700E93F2B /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		FE6B6EF82051D77B00E93F2B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				2C582D03202723D100AC2755 /* AppIcon.xcassets */,
+				FE1780AA20E7AFDA00DDACF2 /* Onboarding.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			files = (
 				2C216CD22028D94400D9C0A9 /* .swiftlint.yml in Resources */,
 				2C582D07202723D100AC2755 /* LaunchScreen.storyboard in Resources */,
+				FE1780AB20E7AFDA00DDACF2 /* Onboarding.xcassets in Resources */,
 				2C8414C72028E27F0094AA45 /* NightActivity.storyboard in Resources */,
 				2C8414B72028DEC70094AA45 /* EveningActivity.storyboard in Resources */,
 				2C0517B320386A1E009BB615 /* Root.storyboard in Resources */,
@@ -698,7 +702,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6NKTR85AFA;
 				INFOPLIST_FILE = Disconnect/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "work.maarten.sleepy-head";
 				PRODUCT_NAME = "Sleepy Head";
 				PROVISIONING_PROFILE_SPECIFIER = "Sleepy Head Development";
@@ -715,7 +722,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 6NKTR85AFA;
 				INFOPLIST_FILE = Disconnect/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "work.maarten.sleepy-head";
 				PRODUCT_NAME = "Sleepy Head";
 				PROVISIONING_PROFILE_SPECIFIER = "Sleepy Head Distribution";
