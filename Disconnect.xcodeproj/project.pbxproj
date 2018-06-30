@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,9 @@
 		2C883C30202BA79F00077ACE /* LocalNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C2F202BA79F00077ACE /* LocalNotificationController.swift */; };
 		2C883C32202BB2DA00077ACE /* UserLeftLockedAppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C31202BB2DA00077ACE /* UserLeftLockedAppSession.swift */; };
 		F223B07EC764C3A60EFAD79A /* Pods_Disconnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */; };
+		FE6B6EF52051D37500E93F2B /* Tips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF42051D37500E93F2B /* Tips.storyboard */; };
+		FE6B6EF72051D38700E93F2B /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6B6EF62051D38700E93F2B /* TipsViewController.swift */; };
+		FE6B6EF92051D77B00E93F2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF82051D77B00E93F2B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		40565C03A1D73D8EA29B6607 /* Pods-Disconnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.release.xcconfig"; sourceTree = "<group>"; };
 		D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disconnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A4F4F0F6057453CA0D254 /* Pods-Disconnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.debug.xcconfig"; sourceTree = "<group>"; };
+		FE6B6EF42051D37500E93F2B /* Tips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tips.storyboard; sourceTree = "<group>"; };
+		FE6B6EF62051D38700E93F2B /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		FE6B6EF82051D77B00E93F2B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 		2C216CC52028D62E00D9C0A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE6B6EF82051D77B00E93F2B /* Main.storyboard */,
 				2C582D05202723D100AC2755 /* LaunchScreen.storyboard */,
 				2C883C28202B815A00077ACE /* AppColors.swift */,
 				2C883C2A202B82EC00077ACE /* AppFonts.swift */,
@@ -225,8 +232,9 @@
 		2C8414B12028DE780094AA45 /* Visual Components */ = {
 			isa = PBXGroup;
 			children = (
-				2C0517B420387504009BB615 /* Onboarding */,
 				2C0517AF203869F9009BB615 /* Root */,
+				FE6B6EF12051D35300E93F2B /* Tips */,
+				2C0517B420387504009BB615 /* Onboarding */,
 				2C8414B32028DEA40094AA45 /* Evening Activity */,
 				2C8414C02028E2370094AA45 /* Night Activity */,
 				2C216CCF2028D8D200D9C0A9 /* Morning Activity */,
@@ -346,6 +354,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE6B6EF12051D35300E93F2B /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				FE6B6EF32051D36800E93F2B /* View Controller */,
+				FE6B6EF22051D36100E93F2B /* View */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		FE6B6EF22051D36100E93F2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE6B6EF42051D37500E93F2B /* Tips.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE6B6EF32051D36800E93F2B /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE6B6EF62051D38700E93F2B /* TipsViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,7 +422,7 @@
 				};
 			};
 			buildConfigurationList = 2C582CF4202723D100AC2755 /* Build configuration list for PBXProject "Disconnect" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -416,6 +449,8 @@
 				2C8414B72028DEC70094AA45 /* EveningActivity.storyboard in Resources */,
 				2C0517B320386A1E009BB615 /* Root.storyboard in Resources */,
 				2C8414CF2028E30C0094AA45 /* MorningActivity.storyboard in Resources */,
+				FE6B6EF92051D77B00E93F2B /* Main.storyboard in Resources */,
+				FE6B6EF52051D37500E93F2B /* Tips.storyboard in Resources */,
 				2C582D04202723D100AC2755 /* AppIcon.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +560,7 @@
 			files = (
 				2C8414BD2028E0DD0094AA45 /* VisualComponent.swift in Sources */,
 				2C8414D12028E8880094AA45 /* MorningActivity.swift in Sources */,
+				FE6B6EF72051D38700E93F2B /* TipsViewController.swift in Sources */,
 				2C582D1120272B6B00AC2755 /* AutoScreenDimmingController.swift in Sources */,
 				2C883C29202B815A00077ACE /* AppColors.swift in Sources */,
 				2C883C2B202B82EC00077ACE /* AppFonts.swift in Sources */,
@@ -609,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -661,10 +697,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -677,7 +714,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6NKTR85AFA;
 				INFOPLIST_FILE = Disconnect/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "work.maarten.sleepy-head";
 				PRODUCT_NAME = "Sleepy Head";
 				PROVISIONING_PROFILE_SPECIFIER = "Sleepy Head Development";
@@ -694,7 +734,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 6NKTR85AFA;
 				INFOPLIST_FILE = Disconnect/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "work.maarten.sleepy-head";
 				PRODUCT_NAME = "Sleepy Head";
 				PROVISIONING_PROFILE_SPECIFIER = "Sleepy Head Distribution";

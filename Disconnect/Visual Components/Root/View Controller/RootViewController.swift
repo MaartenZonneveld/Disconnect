@@ -22,7 +22,47 @@ internal final class RootViewController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.showBulletins([OnboardingBulletins.notifications, OnboardingBulletins.motion, OnboardingBulletins.completed])
+        //self.showOnboardingIfNeeded()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
+extension RootViewController {
+    // MARK: Onboarding
+
+    private var isOnboardingCompleted: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "RootViewController.isOnboardingCompleted")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "RootViewController.isOnboardingCompleted")
+            UserDefaults.standard.synchronize()
+        }
+    }
+
+    private func showOnboardingIfNeeded() {
+        if self.isOnboardingCompleted {
+            return
+        }
+
+        let notifications = OnboardingBulletins.notifications
+        notifications.actionHandler = { item in
+            LocalNotificationController.shared.requestAuthorization(completion: { _ in
+                item.displayNextItem()
+            })
+        }
+
+        let items = [
+            OnboardingBulletins.notifications,
+            OnboardingBulletins.motion,
+            OnboardingBulletins.completed
+        ]
+
+        self.showBulletins(items)
+        self.isOnboardingCompleted = true
     }
 
     func showBulletins(_ items: [BulletinItem]) {
@@ -42,9 +82,5 @@ internal final class RootViewController: UITabBarController {
 
         self.bulletinManager?.prepare()
         self.bulletinManager?.presentBulletin(above: self)
-    }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }

@@ -21,6 +21,9 @@ internal final class OnboardingBulletins {
         page.actionHandler = { item in
             item.displayNextItem()
         }
+        page.alternativeHandler = { item in
+            item.displayNextItem()
+        }
         return page
     }
 
@@ -32,6 +35,9 @@ internal final class OnboardingBulletins {
         page.actionButtonTitle = "Allow"
         page.alternativeButtonTitle = "Not now"
         page.actionHandler = { item in
+            item.displayNextItem()
+        }
+        page.alternativeHandler = { item in
             item.displayNextItem()
         }
         return page

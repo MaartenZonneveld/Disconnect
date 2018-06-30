@@ -13,22 +13,35 @@ internal extension NSNotification.Name {
     static let AppWindowTapped = NSNotification.Name(rawValue: "AppWindowTapped")
 }
 
-internal final class AppWindow: UIWindow {
+extension UIWindow {
 
-    func setup() {
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(windowTapped)))
+    static weak var windowTapGesture: UITapGestureRecognizer?
+
+    func setupAppWindow() {
         self.rootViewController = UIStoryboard(name: "Root", bundle: nil).instantiateInitialViewController()
+
+        let windowTapGesture = UITapGestureRecognizer()
+        windowTapGesture.delegate = self
+        self.addGestureRecognizer(windowTapGesture)
+        UIWindow.windowTapGesture = windowTapGesture
     }
 
     func rootViewController() -> RootViewController {
-        guard let root = self.rootViewController?.navigationController?.viewControllers.first as? RootViewController else {
+        guard let root = (self.rootViewController as? UINavigationController)?.viewControllers.first as? RootViewController else {
             fatalError("rootViewController is not of type `RootViewController`")
         }
         return root
     }
+}
 
-    @objc
-    private func windowTapped() {
-        NotificationCenter.default.post(name: .AppWindowTapped, object: nil)
+extension UIWindow: UIGestureRecognizerDelegate {
+
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if gestureRecognizer === UIWindow.windowTapGesture {
+            NotificationCenter.default.post(name: NSNotification.Name.AppWindowTapped, object: nil)
+            return false
+        }
+
+        return true
     }
 }
