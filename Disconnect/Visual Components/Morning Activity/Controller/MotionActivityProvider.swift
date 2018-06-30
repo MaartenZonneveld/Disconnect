@@ -22,6 +22,15 @@ internal final class MotionActivityProvider {
         }
     }
 
+    static func requestPermission(_ completion: @escaping () -> Void) {
+        let now = Date()
+        let past = now.addingTimeInterval(-5)
+
+        CMMotionActivityManager().queryActivityStarting(from: past, to: now, to: .main) { _, _ in
+            completion()
+        }
+    }
+
     func scanForWalkActivity(since: TimeInterval, minimalConfidence: CMMotionActivityConfidence, success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
 
         let now = Date()

@@ -13,14 +13,14 @@ import UIKit.UIApplication
 @UIApplicationMain
 internal final class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+
     static var shared: AppDelegate {
         guard let shared = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Shared app delegate is not of type `AppDelegate`")
         }
         return shared
     }
-
-    private(set) var appWindow: AppWindow!
 
     let autoScreenDimmingController = AutoScreenDimmingController()
     let appLockController = AppLockController()
@@ -29,15 +29,7 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Fabric.with([Crashlytics.self])
 
-        let window = AppWindow(frame: UIScreen.main.bounds)
-        window.windowLevel = UIWindowLevelNormal
-        window.makeKeyAndVisible()
-        window.setup()
-        self.appWindow = window
-
-        LocalNotificationController.shared.requestAuthorization { granted in
-            print(granted)
-        }
+        self.window?.setupAppWindow()
 
         return true
     }
