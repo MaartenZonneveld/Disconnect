@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHr-vq-02C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHr-vq-02C">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Evening Activity View Controller-->
+        <!--Sleep-->
         <scene sceneID="rRa-qw-7fQ">
             <objects>
                 <viewController id="lHr-vq-02C" customClass="EveningActivityViewController" customModule="Sleepy_Head" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +60,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gEe-wc-TB4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="8dQ-6l-Vz2"/>
+                    <tabBarItem key="tabBarItem" title="Sleep" id="8dQ-6l-Vz2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="settingsButton" destination="vd0-T7-dTa" id="n7m-Al-7ni"/>

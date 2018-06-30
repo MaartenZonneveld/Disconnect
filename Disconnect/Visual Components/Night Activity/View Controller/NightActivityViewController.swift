@@ -10,15 +10,23 @@ import UIKit
 
 internal final class NightActivityViewController: UIViewController {
 
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var clockLabel: UILabel!
     @IBOutlet private weak var finishSleepButton: UIButton!
 
     private weak var autoScreenDimmingControllerAppWentToSleepObserver: AnyObject?
 
-    private var hideStatusBar = false {
+    private var clockTimer: Timer?
+
+    private var dimmed = false {
         didSet {
-            UIView.animate(withDuration: 0.2) {
-                self.setNeedsStatusBarAppearanceUpdate()
-                self.view.layoutIfNeeded()
+            self.setNeedsStatusBarAppearanceUpdate()
+            self.containerView.alpha = self.dimmed ? 0.0 : 1.0
+
+            if self.dimmed {
+                self.stopClockTimer()
+            } else {
+                self.startClockTimer()
             }
         }
     }
@@ -28,7 +36,11 @@ internal final class NightActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
+        self.finishSleepButton.layer.cornerRadius = 10.0
+        self.finishSleepButton.layer.borderColor = UIColor.white.cgColor
+        self.finishSleepButton.layer.borderWidth = 1.0
+
+        self.updateClock()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -40,9 +52,13 @@ internal final class NightActivityViewController: UIViewController {
 
         AppDelegate.shared.autoScreenDimmingController.isSleepAllowed = true
 
-        self.autoScreenDimmingControllerAppWentToSleepObserver = NotificationCenter.default.addObserver(forName: .AutoScreenDimmingControllerAppWentToSleep, object: nil, queue: nil) { [weak self] _ in
-            self?.hideStatusBar = true
+        self.autoScreenDimmingControllerAppWentToSleepObserver = NotificationCenter.default.addObserver(forName: .AutoScreenDimmingControllerSleepChanged, object: nil, queue: nil) { [weak self] notification in
+            self?.updateClock()
+            let sleeping = notification.object as? Bool ?? false
+            self?.dimmed = sleeping
         }
+
+        self.startClockTimer()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,6 +74,8 @@ internal final class NightActivityViewController: UIViewController {
         AppDelegate.shared.appLockController.isAppLocked = false
 
         AppDelegate.shared.autoScreenDimmingController.isSleepAllowed = false
+
+        self.stopClockTimer()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -65,16 +83,32 @@ internal final class NightActivityViewController: UIViewController {
     }
 
     override var prefersStatusBarHidden: Bool {
-        return self.hideStatusBar
+        return self.dimmed
     }
 
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
+        return .none
+    }
+}
+
+extension NightActivityViewController {
+    // MARK: - Clock
+
+    private func startClockTimer() {
+        self.stopClockTimer()
+
+        self.clockTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true, block: { [weak self] _ in
+            self?.updateClock()
+        })
+        self.clockTimer?.tolerance = 5.0
     }
 
-    @objc
-    private func viewTapped() {
-        self.hideStatusBar = !self.hideStatusBar
+    private func stopClockTimer() {
+        self.clockTimer?.invalidate()
+    }
+
+    private func updateClock() {
+        self.clockLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
     }
 }
 

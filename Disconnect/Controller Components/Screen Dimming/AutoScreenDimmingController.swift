@@ -11,7 +11,7 @@ import UIKit.UIScreen
 
 extension Notification.Name {
 
-    static let AutoScreenDimmingControllerAppWentToSleep = Notification.Name(rawValue: "AutoScreenDimmingControllerAppWentToSleep")
+    static let AutoScreenDimmingControllerSleepChanged = Notification.Name(rawValue: "AutoScreenDimmingControllerSleepChanged")
 }
 
 internal final class AutoScreenDimmingController {
@@ -73,9 +73,11 @@ internal final class AutoScreenDimmingController {
             UIScreen.main.brightness = self.restorationBrightness
         }
         UIScreen.main.wantsSoftwareDimming = false
+
+        NotificationCenter.default.post(name: .AutoScreenDimmingControllerSleepChanged, object: false)
     }
 
-    private func temporaryWake() {
+    func temporaryWake() {
         self.wake()
 
         self.sleepTimer = Timer.scheduledTimer(withTimeInterval: self.sleepDelay, repeats: false, block: { _ in
@@ -89,6 +91,6 @@ internal final class AutoScreenDimmingController {
         UIScreen.main.wantsSoftwareDimming = true
         UIScreen.main.brightness = 0.0
 
-        NotificationCenter.default.post(name: .AutoScreenDimmingControllerAppWentToSleep, object: nil)
+        NotificationCenter.default.post(name: .AutoScreenDimmingControllerSleepChanged, object: true)
     }
 }

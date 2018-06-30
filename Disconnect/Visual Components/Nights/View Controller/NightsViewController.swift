@@ -1,5 +1,5 @@
 //
-//  TipsViewController.swift
+//  NightsViewController.swift
 //  Disconnect
 //
 //  Created by Maarten Zonneveld on 08/03/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal final class TipsViewController: UIViewController {
+internal final class NightsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

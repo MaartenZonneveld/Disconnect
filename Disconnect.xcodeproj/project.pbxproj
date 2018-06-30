@@ -36,8 +36,8 @@
 		2C883C32202BB2DA00077ACE /* UserLeftLockedAppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C31202BB2DA00077ACE /* UserLeftLockedAppSession.swift */; };
 		F223B07EC764C3A60EFAD79A /* Pods_Disconnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */; };
 		FE1780AB20E7AFDA00DDACF2 /* Onboarding.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1780AA20E7AFDA00DDACF2 /* Onboarding.xcassets */; };
-		FE6B6EF52051D37500E93F2B /* Tips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF42051D37500E93F2B /* Tips.storyboard */; };
-		FE6B6EF72051D38700E93F2B /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6B6EF62051D38700E93F2B /* TipsViewController.swift */; };
+		FE6B6EF52051D37500E93F2B /* Nights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF42051D37500E93F2B /* Nights.storyboard */; };
+		FE6B6EF72051D38700E93F2B /* NightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6B6EF62051D38700E93F2B /* NightsViewController.swift */; };
 		FE6B6EF92051D77B00E93F2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF82051D77B00E93F2B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +75,8 @@
 		D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disconnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A4F4F0F6057453CA0D254 /* Pods-Disconnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.debug.xcconfig"; sourceTree = "<group>"; };
 		FE1780AA20E7AFDA00DDACF2 /* Onboarding.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Onboarding.xcassets; sourceTree = "<group>"; };
-		FE6B6EF42051D37500E93F2B /* Tips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tips.storyboard; sourceTree = "<group>"; };
-		FE6B6EF62051D38700E93F2B /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		FE6B6EF42051D37500E93F2B /* Nights.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nights.storyboard; sourceTree = "<group>"; };
+		FE6B6EF62051D38700E93F2B /* NightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightsViewController.swift; sourceTree = "<group>"; };
 		FE6B6EF82051D77B00E93F2B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0517AF203869F9009BB615 /* Root */,
-				FE6B6EF12051D35300E93F2B /* Tips */,
+				FE6B6EF12051D35300E93F2B /* Nights */,
 				2C0517B420387504009BB615 /* Onboarding */,
 				2C8414B32028DEA40094AA45 /* Evening Activity */,
 				2C8414C02028E2370094AA45 /* Night Activity */,
@@ -357,19 +357,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FE6B6EF12051D35300E93F2B /* Tips */ = {
+		FE6B6EF12051D35300E93F2B /* Nights */ = {
 			isa = PBXGroup;
 			children = (
 				FE6B6EF32051D36800E93F2B /* View Controller */,
 				FE6B6EF22051D36100E93F2B /* View */,
 			);
-			path = Tips;
+			path = Nights;
 			sourceTree = "<group>";
 		};
 		FE6B6EF22051D36100E93F2B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FE6B6EF42051D37500E93F2B /* Tips.storyboard */,
+				FE6B6EF42051D37500E93F2B /* Nights.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 		FE6B6EF32051D36800E93F2B /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FE6B6EF62051D38700E93F2B /* TipsViewController.swift */,
+				FE6B6EF62051D38700E93F2B /* NightsViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -453,7 +453,7 @@
 				2C0517B320386A1E009BB615 /* Root.storyboard in Resources */,
 				2C8414CF2028E30C0094AA45 /* MorningActivity.storyboard in Resources */,
 				FE6B6EF92051D77B00E93F2B /* Main.storyboard in Resources */,
-				FE6B6EF52051D37500E93F2B /* Tips.storyboard in Resources */,
+				FE6B6EF52051D37500E93F2B /* Nights.storyboard in Resources */,
 				2C582D04202723D100AC2755 /* AppIcon.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,7 +548,7 @@
 			files = (
 				2C8414BD2028E0DD0094AA45 /* VisualComponent.swift in Sources */,
 				2C8414D12028E8880094AA45 /* MorningActivity.swift in Sources */,
-				FE6B6EF72051D38700E93F2B /* TipsViewController.swift in Sources */,
+				FE6B6EF72051D38700E93F2B /* NightsViewController.swift in Sources */,
 				2C582D1120272B6B00AC2755 /* AutoScreenDimmingController.swift in Sources */,
 				2C883C29202B815A00077ACE /* AppColors.swift in Sources */,
 				2C883C2B202B82EC00077ACE /* AppFonts.swift in Sources */,

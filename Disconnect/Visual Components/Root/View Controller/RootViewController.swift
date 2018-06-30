@@ -17,6 +17,7 @@ internal final class RootViewController: UITabBarController {
         super.viewDidLoad()
 
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBar.tintColor = .white
     }
 
     override func viewDidAppear(_ animated: Bool) {
