@@ -31,10 +31,6 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window?.setupAppWindow()
 
-//        LocalNotificationController.shared.requestAuthorization { granted in
-//            print(granted)
-//        }
-
         return true
     }
 }
