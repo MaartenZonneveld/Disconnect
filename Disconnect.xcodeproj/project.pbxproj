@@ -36,10 +36,42 @@
 		2C883C32202BB2DA00077ACE /* UserLeftLockedAppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C883C31202BB2DA00077ACE /* UserLeftLockedAppSession.swift */; };
 		F223B07EC764C3A60EFAD79A /* Pods_Disconnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */; };
 		FE1780AB20E7AFDA00DDACF2 /* Onboarding.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1780AA20E7AFDA00DDACF2 /* Onboarding.xcassets */; };
+		FE5A912220E810680036A9EF /* DisconnectData.h in Headers */ = {isa = PBXBuildFile; fileRef = FE5A912020E810680036A9EF /* DisconnectData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE5A912520E810680036A9EF /* DisconnectData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5A911E20E810680036A9EF /* DisconnectData.framework */; };
+		FE5A912620E810680036A9EF /* DisconnectData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5A911E20E810680036A9EF /* DisconnectData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE5A912D20E810E90036A9EF /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5A912C20E810E90036A9EF /* DatabaseManager.swift */; };
+		FE5A913020E811110036A9EF /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5A912F20E811110036A9EF /* Night.swift */; };
+		FE5A913320E81DF20036A9EF /* NightsOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5A913220E81DF20036A9EF /* NightsOverviewViewModel.swift */; };
 		FE6B6EF52051D37500E93F2B /* Nights.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF42051D37500E93F2B /* Nights.storyboard */; };
 		FE6B6EF72051D38700E93F2B /* NightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6B6EF62051D38700E93F2B /* NightsViewController.swift */; };
 		FE6B6EF92051D77B00E93F2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6B6EF82051D77B00E93F2B /* Main.storyboard */; };
+		FEA9635B20F4C81400961614 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA9635A20F4C81400961614 /* Event.swift */; };
+		FEA9635D20F4CCE900961614 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA9635C20F4CCE900961614 /* DatabaseModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE5A912320E810680036A9EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C582CF1202723D100AC2755 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE5A911D20E810680036A9EF;
+			remoteInfo = DisconnectData;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FE5A912A20E810680036A9EF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FE5A912620E810680036A9EF /* DisconnectData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2C0517B220386A1E009BB615 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
@@ -72,12 +104,21 @@
 		2C883C2F202BA79F00077ACE /* LocalNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationController.swift; sourceTree = "<group>"; };
 		2C883C31202BB2DA00077ACE /* UserLeftLockedAppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLeftLockedAppSession.swift; sourceTree = "<group>"; };
 		40565C03A1D73D8EA29B6607 /* Pods-Disconnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.release.xcconfig"; sourceTree = "<group>"; };
+		D38FCA90AB44FCAA29DB3570 /* Pods_DisconnectData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DisconnectData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disconnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A4F4F0F6057453CA0D254 /* Pods-Disconnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disconnect/Pods-Disconnect.debug.xcconfig"; sourceTree = "<group>"; };
 		FE1780AA20E7AFDA00DDACF2 /* Onboarding.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Onboarding.xcassets; sourceTree = "<group>"; };
+		FE5A911E20E810680036A9EF /* DisconnectData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DisconnectData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE5A912020E810680036A9EF /* DisconnectData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisconnectData.h; sourceTree = "<group>"; };
+		FE5A912120E810680036A9EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE5A912C20E810E90036A9EF /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		FE5A912F20E811110036A9EF /* Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Night.swift; sourceTree = "<group>"; };
+		FE5A913220E81DF20036A9EF /* NightsOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightsOverviewViewModel.swift; sourceTree = "<group>"; };
 		FE6B6EF42051D37500E93F2B /* Nights.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nights.storyboard; sourceTree = "<group>"; };
 		FE6B6EF62051D38700E93F2B /* NightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightsViewController.swift; sourceTree = "<group>"; };
 		FE6B6EF82051D77B00E93F2B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FEA9635A20F4C81400961614 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FEA9635C20F4CCE900961614 /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +126,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE5A912520E810680036A9EF /* DisconnectData.framework in Frameworks */,
 				F223B07EC764C3A60EFAD79A /* Pods_Disconnect.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5A911A20E810680036A9EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +255,7 @@
 			children = (
 				2C216CD12028D94400D9C0A9 /* .swiftlint.yml */,
 				2C582CFB202723D100AC2755 /* Disconnect */,
+				FE5A911F20E810680036A9EF /* DisconnectData */,
 				2C582CFA202723D100AC2755 /* Products */,
 				7F93425A4C8AAAFA5E43A7D9 /* Pods */,
 				D442C5DF387157BA450E626D /* Frameworks */,
@@ -216,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				2C582CF9202723D100AC2755 /* Sleepy Head.app */,
+				FE5A911E20E810680036A9EF /* DisconnectData.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -353,13 +404,52 @@
 			isa = PBXGroup;
 			children = (
 				D863F2F7B4D3461C67ADCEEA /* Pods_Disconnect.framework */,
+				D38FCA90AB44FCAA29DB3570 /* Pods_DisconnectData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE5A911F20E810680036A9EF /* DisconnectData */ = {
+			isa = PBXGroup;
+			children = (
+				FE5A912E20E811080036A9EF /* Model */,
+				FE5A912B20E810D20036A9EF /* Controller */,
+				FE5A912020E810680036A9EF /* DisconnectData.h */,
+				FE5A912120E810680036A9EF /* Info.plist */,
+			);
+			path = DisconnectData;
+			sourceTree = "<group>";
+		};
+		FE5A912B20E810D20036A9EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE5A912C20E810E90036A9EF /* DatabaseManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE5A912E20E811080036A9EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE5A912F20E811110036A9EF /* Night.swift */,
+				FEA9635A20F4C81400961614 /* Event.swift */,
+				FEA9635C20F4CCE900961614 /* DatabaseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE5A913120E81DE50036A9EF /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE5A913220E81DF20036A9EF /* NightsOverviewViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		FE6B6EF12051D35300E93F2B /* Nights */ = {
 			isa = PBXGroup;
 			children = (
+				FE5A913120E81DE50036A9EF /* View Model */,
 				FE6B6EF32051D36800E93F2B /* View Controller */,
 				FE6B6EF22051D36100E93F2B /* View */,
 			);
@@ -384,6 +474,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		FE5A911B20E810680036A9EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE5A912220E810680036A9EF /* DisconnectData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		2C582CF8202723D100AC2755 /* Disconnect */ = {
 			isa = PBXNativeTarget;
@@ -397,15 +498,35 @@
 				2C582CF7202723D100AC2755 /* Resources */,
 				E03E50D10DABB5CC748DEFB1 /* [CP] Embed Pods Frameworks */,
 				2C883C26202B746400077ACE /* Fabric */,
+				FE5A912A20E810680036A9EF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FE5A912420E810680036A9EF /* PBXTargetDependency */,
 			);
 			name = Disconnect;
 			productName = Disconnect;
 			productReference = 2C582CF9202723D100AC2755 /* Sleepy Head.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FE5A911D20E810680036A9EF /* DisconnectData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE5A912720E810680036A9EF /* Build configuration list for PBXNativeTarget "DisconnectData" */;
+			buildPhases = (
+				FE5A911920E810680036A9EF /* Sources */,
+				FE5A911A20E810680036A9EF /* Frameworks */,
+				FE5A911B20E810680036A9EF /* Headers */,
+				FE5A911C20E810680036A9EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DisconnectData;
+			productName = DisconnectData;
+			productReference = FE5A911E20E810680036A9EF /* DisconnectData.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -420,6 +541,10 @@
 					2C582CF8202723D100AC2755 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
+					};
+					FE5A911D20E810680036A9EF = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -436,6 +561,7 @@
 			projectRoot = "";
 			targets = (
 				2C582CF8202723D100AC2755 /* Disconnect */,
+				FE5A911D20E810680036A9EF /* DisconnectData */,
 			);
 		};
 /* End PBXProject section */
@@ -455,6 +581,13 @@
 				FE6B6EF92051D77B00E93F2B /* Main.storyboard in Resources */,
 				FE6B6EF52051D37500E93F2B /* Nights.storyboard in Resources */,
 				2C582D04202723D100AC2755 /* AppIcon.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5A911C20E810680036A9EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +688,7 @@
 				2C883C2D202B83F700077ACE /* GradientView.swift in Sources */,
 				2C216CC32028D31B00D9C0A9 /* AppWindow.swift in Sources */,
 				2C8414BF2028E0FE0094AA45 /* EveningActivity.swift in Sources */,
+				FE5A913320E81DF20036A9EF /* NightsOverviewViewModel.swift in Sources */,
 				2C582D132027342E00AC2755 /* MorningActivityController.swift in Sources */,
 				2C0517B620387518009BB615 /* OnboardingBulletins.swift in Sources */,
 				2C8414B92028DEEC0094AA45 /* EveningActivityViewController.swift in Sources */,
@@ -570,7 +704,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE5A911920E810680036A9EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEA9635D20F4CCE900961614 /* DatabaseModel.swift in Sources */,
+				FE5A913020E811110036A9EF /* Night.swift in Sources */,
+				FEA9635B20F4C81400961614 /* Event.swift in Sources */,
+				FE5A912D20E810E90036A9EF /* DatabaseManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE5A912420E810680036A9EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE5A911D20E810680036A9EF /* DisconnectData */;
+			targetProxy = FE5A912320E810680036A9EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2C582D05202723D100AC2755 /* LaunchScreen.storyboard */ = {
@@ -735,6 +888,61 @@
 			};
 			name = Release;
 		};
+		FE5A912820E810680036A9EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DisconnectData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.maarten.DisconnectData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FE5A912920E810680036A9EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DisconnectData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.maarten.DisconnectData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -752,6 +960,15 @@
 			buildConfigurations = (
 				2C582D0C202723D100AC2755 /* Debug */,
 				2C582D0D202723D100AC2755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE5A912720E810680036A9EF /* Build configuration list for PBXNativeTarget "DisconnectData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE5A912820E810680036A9EF /* Debug */,
+				FE5A912920E810680036A9EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
